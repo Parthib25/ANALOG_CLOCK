@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANALOG CLOCK</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="outbox">
+      <div class="box">
+        <div class="clock">
+          <div class="hour">
+            <div class="hr" id="hr"></div>
+          </div>
+          <div class="minute">
+            <div class="min" id="min"></div>
+          </div>
+          <div class="second">
+            <div class="sec" id="sec"></div>
+          </div>
+        </div>
+      </div>
+      <div class="Day"></div>
+      <div class="audio">
+        <iframe
+          src="bird singing SoundEffectsFactory.mp3"
+          allow="autoplay"
+          style="display: none"
+          id="iframeAudio"
+        >
+        </iframe>
+        <audio autoplay loop id="playAudio">
+          <source src="bird singing SoundEffectsFactory.mp3" />
+        </audio>
+      </div>
+    </div>
+    <script>
+      const deg = 6;
+      const h = document.querySelector(".hr");
+      const m = document.querySelector(".min");
+      const s = document.querySelector(".sec");
+      const days = document.querySelector(".Day");
+      const iframe = document.querySelector("#iframeaudio");
+      const aframe = document.querySelector("#playAudio");
+      setInterval(() => {
+        let d = new Date();
+        let hh = new Date().getHours() * 30;
+        let mm = new Date().getMinutes() * 6;
+        let ss = new Date().getSeconds() * 6;
+        let da = new Date().getDate();
+        let day = new Date().getDay();
+        let year = new Date().getFullYear();
+        var isChrome =
+          /Chrome/.test(navigator.userAgent) &&
+          /Google Inc/.test(navigator.vendor);
+        let dayarr = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        h.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+        m.style.transform = `rotateZ(${mm}deg)`;
+        s.style.transform = `rotateZ(${ss}deg)`;
+        days.innerHTML = `${da},${dayarr[day]},${hh / 30}:${mm / 6}:${
+          ss / 6
+        },${year}`;
+
+        if (!isChrome) {
+          iframe.remove();
+        } else {
+          aframe.remove();
+        }
+      });
+    </script>
+  </body>
+</html>
