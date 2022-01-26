@@ -7,7 +7,7 @@
     <title>ANALOG CLOCK</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="bods">
     <div class="outbox">
       <div class="box" data-tilt
         
@@ -71,8 +71,21 @@
         days.innerHTML = `${da},${dayarr[day]},${hh / 30}:${mm / 6}:${
           ss / 6
         },${year}`;
-
+   
        
+      });
+      const bod = document.querySelector(".bods");
+      let ho = 0;
+      setInterval(() => {
+        date = new Date();
+        ho = date.getHours();
+        if (ho >= 16 || ho <= 5) {
+          bod.classList.add("body-night");
+          bod.classList.remove(".bods");
+        }else{
+           bod.classList.add("bods");
+          bod.classList.remove(".body-night");
+        }
       });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
