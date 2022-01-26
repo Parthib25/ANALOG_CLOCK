@@ -9,7 +9,10 @@
   </head>
   <body>
     <div class="outbox">
-      <div class="box">
+      <div class="box" data-tilt
+        data-tilt-glare
+        data-tilt-max-glare="0.8"
+        data-tilt-scale="1.1">
         <div class="clock">
           <div class="hour">
             <div class="hr" id="hr"></div>
@@ -22,7 +25,10 @@
           </div>
         </div>
       </div>
-      <div class="Day"></div>
+      <div class="Day" data-tilt
+        data-tilt-glare
+        data-tilt-max-glare="0.8"
+        data-tilt-scale="1.1"></div>
       <div class="audio">
         <iframe
           src="bird singing SoundEffectsFactory.mp3"
@@ -70,5 +76,6 @@
        
       });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
   </body>
 </html>
