@@ -31,9 +31,7 @@
           id="iframeAudio"
         >
         </iframe>
-        <audio autoplay loop id="playAudio">
-          <source src="bird singing SoundEffectsFactory.mp3" />
-        </audio>
+       
       </div>
     </div>
     <script>
@@ -43,7 +41,7 @@
       const s = document.querySelector(".sec");
       const days = document.querySelector(".Day");
       const iframe = document.querySelector("#iframeaudio");
-      const aframe = document.querySelector("#playAudio");
+      
       setInterval(() => {
         let d = new Date();
         let hh = new Date().getHours() * 30;
@@ -71,11 +69,7 @@
           ss / 6
         },${year}`;
 
-        if (!isChrome) {
-          iframe.remove();
-        } else {
-          aframe.remove();
-        }
+       
       });
     </script>
   </body>
