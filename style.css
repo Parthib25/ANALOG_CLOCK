@@ -4,7 +4,7 @@
   padding: 0%;
   box-sizing: border-box;
 }
-body {
+.bods {
   position: relative;
   width: 100%;
 
@@ -16,6 +16,18 @@ body {
   align-items: center;
   justify-content: center;
 }
+.body-night {
+  position: relative;
+  width: 100%;
+
+  background: url("148423.jpg") no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .outbox {
   position: relative;
 }
